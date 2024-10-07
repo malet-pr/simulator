@@ -9,8 +9,8 @@
 		<relativePath/>
 	</parent>
 	<groupId>org.acme</groupId>
-	<artifactId>simulator</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>sim</artifactId>
+	<version>0.0.1</version>
 	<name>simulator</name>
 	<description>Data simulation for microservices project</description>
 	<properties>
@@ -111,6 +111,20 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<profiles>
+		<profile>
+			<id>local</id>
+			<properties>
+				<spring.profiles.active>local</spring.profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>docker</id>
+			<properties>
+				<spring.profiles.active>docker</spring.profiles.active>
+			</properties>
+		</profile>
+	</profiles>
 	<build>
 		<plugins>
 			<plugin>
