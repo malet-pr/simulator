@@ -1,6 +1,9 @@
 package org.acme.simulator.simulations.internal;
 
 import net.datafaker.Faker;
+import org.acme.simulator.api.KafkaController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -12,6 +15,8 @@ import java.util.concurrent.TimeUnit;
 
 @Component
 public class WorkOrderSimulator {
+
+    private static final Logger log = LoggerFactory.getLogger(KafkaController.class);
 
     Faker faker = new Faker(Locale.ENGLISH);
     Random random = new Random();

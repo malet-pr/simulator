@@ -11,4 +11,14 @@ management:
             exposure:
                 include: health, info, prometheus
     tracing:
-        enabled: true
+        enabled: false
+        sampling:
+            probability: 0.0
+    metrics:
+        distribution:
+            percentiles-histogram:
+                http:
+                    server:
+                        requests: true
+logging:
+    config: classpath:logback-spring.xml
